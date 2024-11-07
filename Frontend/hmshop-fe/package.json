@@ -1,5 +1,5 @@
 {
-  "name": "hmshop-frontend",
+  "name": "hmshop-fe",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
