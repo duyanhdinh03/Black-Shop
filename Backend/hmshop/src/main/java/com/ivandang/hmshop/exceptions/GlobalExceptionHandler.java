@@ -22,6 +22,13 @@ public class GlobalExceptionHandler extends RuntimeException {
             .body(ex.getMessage());
   }
 
+  // Xử lý PermissionDenyException
+  @ExceptionHandler(PermissionDenyException.class)
+  public ResponseEntity<String> handlePermissionDenyException(PermissionDenyException ex) {
+    return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+            .body(ex.getMessage());
+  }
+
   @ExceptionHandler(Exception.class)
   public ResponseEntity<String> handleGenericException(Exception ex) {
     // Return 500 INTERNAL SERVER Error

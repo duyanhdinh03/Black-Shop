@@ -5,6 +5,7 @@ import com.ivandang.hmshop.dto.CategoryDTO;
 import com.ivandang.hmshop.model.Category;
 import com.ivandang.hmshop.repository.CategoryRepository;
 import com.ivandang.hmshop.service.CategoryService;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
     @Override
+    @Transactional
     public Category createCategory(CategoryDTO categoryDTO) {
         Category newCategory = Category
                 .builder()
@@ -35,6 +37,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    @Transactional
     public Category updateCategory(long categoryId,
                                    CategoryDTO categoryDTO) {
         Category existingCategory = getCategoryById(categoryId);
@@ -44,6 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    @Transactional
     public void deleteCategory(long id) {
         //xóa xong
         categoryRepository.deleteById(id);
