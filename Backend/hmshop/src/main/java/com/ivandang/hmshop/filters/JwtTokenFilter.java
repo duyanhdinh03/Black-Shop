@@ -25,7 +25,7 @@ import java.util.List;
 @RequiredArgsConstructor
 
 public class JwtTokenFilter extends OncePerRequestFilter{
-    @Value("/api/v1")
+    @Value("${api.prefix}")
     private String apiPrefix;
     private final UserDetailsService userDetailsService;
     private final JwtTokenUtils jwtTokenUtil;

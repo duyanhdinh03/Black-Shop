@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/order_details")
+@RequestMapping("${api.prefix}/order_details")
 @RequiredArgsConstructor
 public class OrderDetailsController {
     private final OrderDetailsServiceImpl orderDetailsService;

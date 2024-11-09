@@ -19,7 +19,7 @@ import org.springframework.web.servlet.LocaleResolver;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/categories")
+@RequestMapping("${api.prefix}/categories")
 @RequiredArgsConstructor
 public class CategoryController {
     private final CategoryService categoryService;
